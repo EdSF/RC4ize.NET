@@ -1,0 +1,33 @@
+GitHub RC4ize.NET project
+--- ---
+
+
+Thank you for your interest on RC4ize.NET!
+
+This project is meant to provide the .NET framework with
+a cryptographic provider that implements the RC4 algorithm
+along with some examples of how to apply this project on
+your own needs.
+
+If you need assistance, please contact me: 
+
+
+class ContactInfo
+{
+    static void Main(string[] args)
+    {
+        string email = 
+            "rb tod moc tod lou ta m tod ihcu";
+        char[] array =
+            email.ToCharArray();
+        Array.Reverse(array);
+        Console.WriteLine(new String(array));
+    }
+}
+
+
+Cheers!
+
+
+NeuronUpheaval
+Apr 15, 2011
