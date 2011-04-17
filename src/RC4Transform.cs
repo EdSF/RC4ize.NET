@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -57,6 +57,13 @@ namespace RC4.NET
             ScheduleBox(rgbKey, rgbIV);
         }
 
+        private void SwapBoxes(byte i, byte j)
+        {
+            byte swap = box[i];
+            box[i] = box[j];
+            box[j] = swap;
+        }
+
         private void InitializeBox()
         {
             int c;
@@ -85,9 +92,7 @@ namespace RC4.NET
             {
                 j = (byte)(j + box[i] + key[i % keylength]);
 
-                swap = box[i];
-                box[i] = box[j];
-                box[j] = swap;
+                SwapBoxes(i, j);
             }
         }
 
@@ -103,9 +108,7 @@ namespace RC4.NET
                 i++;
                 j = (byte)(j + box[i]);
 
-                swap = box[i];
-                box[i] = box[j];
-                box[j] = swap;
+                SwapBoxes(i, j);
 
                 k = (byte)(box[i] + box[j]);
 
